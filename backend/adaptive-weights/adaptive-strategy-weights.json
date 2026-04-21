@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-03-31T09:57:10.323Z",
+  "w_cena": 0.40000000000000013,
+  "w_vzdalenost": 0.30000000000000004,
+  "w_reliability": 0.29999999999999977,
+  "totalDecisions": 520,
+  "cumulativeReward": -1585.1738610614414,
+  "growthAggression": 0.5,
+  "expansionLearningReward": 33.7384968172295,
+  "kpiCompetitiveReward": -45.28958789110768,
+  "performance": [
+    {
+      "id": 1,
+      "supplierId": 1,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    },
+    {
+      "id": 2,
+      "supplierId": 2,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    },
+    {
+      "id": 3,
+      "supplierId": 3,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    },
+    {
+      "id": 4,
+      "supplierId": 4,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    },
+    {
+      "id": 5,
+      "supplierId": 5,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    },
+    {
+      "id": 6,
+      "supplierId": 6,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalCostPaid": 0,
+      "totalQuantity": 0,
+      "avgDeliveryTime": 0,
+      "lastUsedTick": 0
+    }
+  ]
+}

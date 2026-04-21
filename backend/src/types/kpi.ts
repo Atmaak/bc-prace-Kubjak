@@ -1,0 +1,15 @@
+export type KPI = {
+    celkovaInvestice: number,
+    cistyZisk: number,
+    financniRezerva: number,
+    likviditniKrytiProvozu: number,
+    miraNesplnenePoptavky: number,
+    nakladovostTrzeb: number,
+    provozniMarze: number,
+    miraVyuzitiSkladovaciJednotky: number,
+    miraVyuzitiVyrobniKapacity: number,
+    prumernaDobaCekaniSurovin: number,
+    ROI: number,
+    spotrebaEnergie: number,
+    uspesnostPlneniObjednavek: number,
+}

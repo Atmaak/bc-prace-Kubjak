@@ -1,0 +1,281 @@
+{
+    "pocatecniFinance": 50000000,
+    "danovaSazba": 0.25,
+    "koeficientPoptavky": 1.0,
+    "cenaEnergie": 5.8,
+    "mzdaZamestnance": 2200,
+    "cenaZaKm": 42,
+    "cenaOceli": 14000,
+    "simulation": {
+        "numberOfIterations": 3650,
+        "defaultTickRateMs": 1,
+        "avgTickWindowSize": 250,
+        "maxInMemoryLogs": 2000,
+        "broadcastIntervalMs": 100,
+        "seed": "BC PRACE MARTIN KUBJAK test",
+        "randomBuildingOffsetMax": 10,
+        "defaultPoloha": {
+            "lat": 50.2,
+            "lng": 15.8
+        },
+        "sortingCenter": {
+            "lat": 50.2,
+            "lng": 15.8
+        }
+    },
+    "region": {
+        "id": 1,
+        "nazev": "Okoli Hradce",
+        "velikost": {
+            "x": 1000000,
+            "y": 1000000
+        },
+        "stred": {
+            "lat": 50.2,
+            "lng": 15.8
+        },
+        "baseDemand": 180,
+        "demandModel": {
+            "seasonalityPeriodTicks": 365,
+            "seasonalityAmplitude": 0.20,
+            "seasonalityPhaseShiftTicks": 0,
+            "shockProbabilityPerTick": 0.03,
+            "shockMaxImpact": 0.45,
+            "priceElasticity": 0.65,
+            "minDemandMultiplier": 0.15
+        },
+        "market": {
+            "priceSensitivity": 0.18,
+            "minPriceMultiplier": 0.6,
+            "maxPriceMultiplier": 1.4
+        }
+    },
+    "suppliers": {
+        "koksCount": 3,
+        "rudaCount": 3
+    },
+    "companies": [
+        {
+            "id": "COMPANY-RL",
+            "name": "Reinforcement Learning",
+            "strategyVariant": "RL"
+        },
+        {
+            "id": "COMPANY-EVO",
+            "name": "Evolutionary",
+            "strategyVariant": "EVOLUTIONARY"
+        },
+        {
+            "id": "COMPANY-DOMINANT",
+            "name": "Dominant",
+            "strategyVariant": "DOMINANT"
+        },
+        {
+            "id": "COMPANY-1",
+            "name": "Balanced",
+            "strategyVariant": "BALANCED"
+        },
+        {
+            "id": "COMPANY-2",
+            "name": "Conservative",
+            "strategyVariant": "CONSERVATIVE"
+        },
+        {
+            "id": "COMPANY-3",
+            "name": "Market Leader",
+            "strategyVariant": "MARKET_LEADER"
+        },
+        {
+            "id": "COMPANY-4",
+            "name": "Aggressive",
+            "strategyVariant": "AGGRESSIVE"
+        },
+        {
+            "id": "COMPANY-5",
+            "name": "Adaptive",
+            "strategyVariant": "ADAPTIVE"
+        }
+    ],
+    "firma": {
+        "financialLookaheadTicks": 180,
+        "expansionProfitBuffer": 8000000,
+        "dynamicSupplyTicks": 14,
+        "fullStorageSellThreshold": 20,
+        "fullStorageSellRatio": 0.5,
+        "minimumFallbackOrderQuantity": 1,
+        "actionDurationsTicks": {
+            "buyBuilding": 365,
+            "buyLine": 240,
+            "buyStorage": 120,
+            "buySupplies": 5,
+            "produceSteel": 1,
+            "sellProduct": 2
+        }
+    },
+    "production": {
+        "koksPerOcel": 0.6,
+        "rudaPerOcel": 1.8
+    },
+    "starterInventory": {
+        "ZELEZNA_RUDA": 0,
+        "KOKS": 0
+    },
+    "budova": {
+        "purchaseCostEstimate": 80000000
+    },
+    "kpi": {
+        "financialReserveRatio": 0.2,
+        "productionCapacityReferenceLines": 10
+    },
+    "sklad": {
+        "pocatecniCena": 6000000,
+        "kapacita": 600,
+        "spotrebaEnergie": 12,
+        "velikost": {
+            "x": 50,
+            "y": 30
+        }
+    },
+    "linka": {
+        "pocatecniCena": 45000000,
+        "kapacita": 20,
+        "spotrebaEnergie": 280,
+        "velikost": {
+            "x": 40,
+            "y": 20
+        },
+        "pocetZamestnancu": 35,
+        "inputRatio": {
+            "KOKS": 0.6,
+            "ZELEZNA_RUDA": 1.8
+        },
+        "outputRatio": {
+            "OCEL": 1
+        }
+    },
+    "dodavatel": {
+        "pocatecniCenaRudy": 4500,
+        "pocatecniCenaKoksu": 14000,
+        "pocatecniObjemRudy": 2200,
+        "pocatecniObjemKoksu": 1700,
+        "volatility": 0.06,
+        "minPrice": 800,
+        "dailyVolumeVariance": 0.30
+    },
+    "strategie": {
+        "balanced": {
+            "supplierWeights": {
+                "price": 0.5,
+                "distance": 0.5
+            },
+            "decisionWeights": {
+                "expansion": 0.3,
+                "cashflow": 0.3,
+                "safety": 0.2,
+                "logistics": 0.2
+            },
+            "productionRate": 0.7,
+            "expandEveryTicks": 90,
+            "supplySpendRatio": 0.25,
+            "normalization": {
+                "priceReference": 100,
+                "distanceKmReference": 100
+            }
+        },
+        "aggressive": {
+            "supplierWeights": {
+                "price": 0.3,
+                "distance": 0.7
+            },
+            "productionRate": 1,
+            "expandEveryTicks": 45,
+            "supplySpendRatio": 0.5
+        },
+        "conservative": {
+            "supplierWeights": {
+                "price": 0.9,
+                "distance": 0.1
+            },
+            "productionRate": 0.5,
+            "expandEveryTicks": 120,
+            "supplySpendRatio": 0.15
+        },
+        "marketLeader": {
+            "supplierWeights": {
+                "price": 0.4,
+                "distance": 0.6
+            },
+            "productionRate": 0.9,
+            "expandEveryTicks": 60,
+            "supplySpendRatio": 0.4
+        },
+        "adaptive": {
+            "learningRate": 0.1,
+            "rewardBase": 100,
+            "initialSuccessCount": 1,
+            "defaultSuccessRate": 0.5,
+            "boostPhaseTicks": 120,
+            "boostProductionRate": 0.98,
+            "boostSupplySpendRatio": 0.5,
+            "initialWeights": {
+                "price": 0.45,
+                "distance": 0.30,
+                "reliability": 0.25
+            },
+            "reliabilityMaxWeight": 0.3,
+            "decisionConfidenceHorizon": 40,
+            "failurePenalty": 50,
+            "weightRefreshInterval": 10,
+            "weightEmaDecay": 0.12,
+            "productionRates": {
+                "default": 0.90,
+                "highSuccess": 1.0,
+                "lowSuccess": 0.80
+            },
+            "successThresholds": {
+                "high": 0.75,
+                "low": 0.4
+            },
+            "expandInterval": {
+                "baseTicks": 45,
+                "minTicks": 15,
+                "aggressionScale": 25
+            },
+            "supplySpendRatio": {
+                "min": 0.40,
+                "max": 0.75
+            },
+            "financialGuards": {
+                "spendReductionAtMaxRisk": 0.12,
+                "productionSlowdownAtMaxRisk": 0.08
+            },
+            "roiThresholds": {
+                "good": 12,
+                "poor": -8
+            },
+            "performanceWeights": {
+                "good": {
+                    "price": 0.50,
+                    "distance": 0.25,
+                    "reliability": 0.25
+                },
+                "poor": {
+                    "price": 0.30,
+                    "distance": 0.30,
+                    "reliability": 0.40
+                },
+                "neutral": {
+                    "price": 0.40,
+                    "distance": 0.30,
+                    "reliability": 0.30
+                }
+            }
+        }
+    },
+    "learningMode": {
+        "enabled": false,
+        "autoRestartIterations": 1000000,
+        "seedGeneratorSeed": "RANDOM",
+        "fixedSeedEachRun": false
+    }
+}

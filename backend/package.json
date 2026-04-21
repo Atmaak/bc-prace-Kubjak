@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --ignore logs/ --ignore saves/ --ignore simulation-history/ ./src/server.ts",
+    "experiments:run": "ts-node ./src/scripts/runExperiments.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.8",
+    "@types/nodemon": "^1.19.6",
+    "@types/ws": "^8.18.1",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ws": "^8.19.0",
+    "zod": "^4.1.11"
+  }
+}
