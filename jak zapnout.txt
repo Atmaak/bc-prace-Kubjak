@@ -1,0 +1,14 @@
+musi byt nainstalovany nodejs https://nodejs.org/en/download/current
+
+cd frontend
+npm i 
+npm run dev
+
+cd backend
+npm i
+npm run dev
+
+bezi na https://localhost:3000
+
+
+stáhnout https://drive.google.com/file/d/1icyDXkAcvVKtIPOwSRisoE9sCWVH7LPf/view?usp=sharing .pmtiles z google disku a dát je do složky /public místo here_put_map
