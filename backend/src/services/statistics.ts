@@ -27,12 +27,13 @@ export function standardDeviation(values: number[]): number {
     return Math.sqrt(variance);
 }
 
-export function confidenceInterval95(values: number[]): { low: number; high: number } {
+export function confidenceInterval95(values: number[], n: number): { low: number; high: number } {
     if (values.length === 0) return { low: 0, high: 0 };
 
     const avg = mean(values);
     const sd = standardDeviation(values);
-    const margin = values.length > 0 ? 1.96 * (sd / Math.sqrt(values.length)) : 0;
+    const criticalValue = n <= 10 ? 2.262 : 1.96;
+    const margin = n > 0 ? criticalValue * (sd / Math.sqrt(n)) : 0;
 
     return {
         low: avg - margin,
@@ -43,7 +44,7 @@ export function confidenceInterval95(values: number[]): { low: number; high: num
 export function summarize(values: number[]): NumericSummary {
     const avg = mean(values);
     const sd = standardDeviation(values);
-    const ci95 = confidenceInterval95(values);
+    const ci95 = confidenceInterval95(values, values.length);
 
     return {
         mean: round(avg),
